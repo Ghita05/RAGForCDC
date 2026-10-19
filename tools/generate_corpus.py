@@ -3,7 +3,7 @@
 """
 Génère un corpus synthétique de cahiers des charges français suivant les 14
 sections du template standard (table cdc_template_section, template "Standard
-SI — Groupe EB"), plus un manifeste CSV servant de vérité terrain.
+SI — Société Exemple"), plus un manifeste CSV servant de vérité terrain.
 
 Design:
 - Graine fixe => corpus identique à chaque exécution => benchmarks reproductibles.
@@ -28,7 +28,7 @@ OUT = Path("corpus")
 WORDS_PER_PAGE = 470
 TARGET_WORDS = (7200, 13800)  # ~15 à ~29 pages
 
-# Miroir de cdc_template_section pour le template "Standard SI — Groupe EB".
+# Miroir de cdc_template_section pour le template "Standard SI — Société Exemple".
 TEMPLATE_SECTIONS = [
     (1, "contexte", "Contexte et enjeux"),
     (2, "objet", "Objet de la consultation"),
@@ -100,17 +100,17 @@ SUBJECTS = {
 # ---------------------------------------------------------------------------
 
 CONTEXTE_GENERIQUE = [
-    "Le Groupe EB emploie plus de {effectif} collaborateurs répartis sur "
+    "La Société Exemple emploie plus de {effectif} collaborateurs répartis sur "
     "{nb_sites} sites au Maroc. La Direction des Systèmes d'Information "
     "pilote l'ensemble des projets d'évolution du système d'information "
     "pour le compte des directions métier.",
     "Dans le cadre de son plan stratégique {annee_plan}-{annee_plan_fin}, le "
-    "Groupe EB poursuit la modernisation de son système d'information afin "
+    "La Société Exemple poursuit la modernisation de son système d'information afin "
     "de soutenir la croissance de ses activités et d'améliorer la qualité "
     "de service rendue à ses clients internes et externes.",
     "La présente consultation s'inscrit dans une démarche de renforcement de "
     "la résilience et de la performance des services informatiques du "
-    "Groupe EB, engagée depuis {anciennete} ans à l'initiative de la "
+    "La Société Exemple, engagée depuis {anciennete} ans à l'initiative de la "
     "Direction Générale.",
 ]
 
@@ -131,7 +131,7 @@ CONTEXTE_TYPE = {
         "développées en interne il y a plusieurs années, dont la "
         "maintenance devient coûteuse et dont les évolutions fonctionnelles "
         "sont de plus en plus difficiles à intégrer.",
-        "La transformation numérique du Groupe EB nécessite une refonte des "
+        "La transformation numérique de la Société Exemple nécessite une refonte des "
         "outils utilisés au quotidien par les équipes opérationnelles, afin "
         "d'en améliorer l'ergonomie, la fiabilité et l'interopérabilité "
         "avec le reste du système d'information.",
@@ -141,7 +141,7 @@ CONTEXTE_TYPE = {
         "plusieurs exercices budgétaires, dont le suivi et l'entretien "
         "reposent aujourd'hui sur des interventions ponctuelles peu "
         "formalisées.",
-        "L'absence de contrat de maintenance structuré expose le Groupe EB "
+        "L'absence de contrat de maintenance structuré expose la Société Exemple "
         "à des délais de résolution incident variables et difficiles à "
         "anticiper, ce qui nuit à la continuité de service des directions "
         "métier.",
@@ -151,7 +151,7 @@ CONTEXTE_TYPE = {
         "technique et présente des risques croissants d'obsolescence, tant "
         "sur le plan matériel que sur le plan de la disponibilité des "
         "pièces de rechange.",
-        "La croissance des volumes de données traitées par le Groupe EB "
+        "La croissance des volumes de données traitées par la Société Exemple "
         "impose une revue de la capacité et de la résilience de "
         "l'infrastructure, dans un contexte où la continuité d'activité "
         "est une exigence de plus en plus forte des directions métier.",
@@ -165,7 +165,7 @@ CONTEXTE_ENJEUX = [
     "L'enjeu principal de cette consultation est de garantir la continuité "
     "de service pour l'ensemble des directions métier concernées, sans "
     "dégradation perceptible pendant la période de transition.",
-    "Le Groupe EB attend du prestataire retenu une capacité à s'intégrer "
+    "La Société Exemple attend du prestataire retenu une capacité à s'intégrer "
     "aux processus internes existants, tout en proposant les évolutions "
     "nécessaires à l'atteinte des objectifs fixés.",
     "La maîtrise des délais et des coûts constitue un enjeu majeur pour la "
@@ -173,7 +173,7 @@ CONTEXTE_ENJEUX = [
     "cadre du comité de pilotage informatique mensuel.",
     "Le respect des exigences de sécurité et de conformité réglementaire "
     "conditionne l'acceptation du projet par la Direction des Risques du "
-    "Groupe EB.",
+    "Société Exemple.",
 ]
 
 
@@ -189,21 +189,21 @@ def build_contexte(rng, typ, p):
 # ---------------------------------------------------------------------------
 
 OBJET_TEMPLATES = [
-    "Le présent cahier des charges définit les besoins du Groupe EB relatifs "
+    "Le présent cahier des charges définit les besoins de la Société Exemple relatifs "
     "à la prestation suivante : {subject}. Il précise les exigences "
     "fonctionnelles et techniques attendues, les délais d'exécution, les "
     "modalités de réception ainsi que les engagements de garantie et de "
     "niveau de service. Le prestataire retenu s'engage sur l'ensemble des "
     "clauses du présent document, qui prévaut sur toute proposition "
     "commerciale antérieure en cas de contradiction.",
-    "Le Groupe EB souhaite confier à un prestataire qualifié la réalisation "
+    "La Société Exemple souhaite confier à un prestataire qualifié la réalisation "
     "de la prestation suivante : {subject}. Ce document en fixe le "
     "périmètre, les exigences techniques et fonctionnelles, le calendrier "
     "contractuel, les conditions financières ainsi que les conditions de "
     "recette. Toute offre déposée dans le cadre de cette consultation doit "
     "répondre point par point aux exigences formulées ci-après.",
     "Ce document constitue le cahier des charges de la consultation lancée "
-    "par la Direction des Systèmes d'Information du Groupe EB pour la "
+    "par la Direction des Systèmes d'Information de la Société Exemple pour la "
     "prestation suivante : {subject}. Il engage le prestataire retenu sur "
     "l'ensemble des exigences, des délais et des niveaux de service qui y "
     "sont énoncés, pour toute la durée du marché.",
@@ -232,7 +232,7 @@ PERIMETRE_INCLUS = {
     "logiciel": [
         "Cadrage fonctionnel détaillé et rédaction des spécifications",
         "Développement de l'ensemble des modules décrits au présent CDC",
-        "Intégration avec les systèmes existants du Groupe EB",
+        "Intégration avec les systèmes existants de la Société Exemple",
         "Recette fonctionnelle et technique",
         "Rédaction de la documentation technique et utilisateur",
         "Formation des utilisateurs clés et des administrateurs",
@@ -266,24 +266,24 @@ PERIMETRE_EXCLUS = [
     "L'exploitation courante au-delà de la période de garantie contractuelle",
     "Les développements ou adaptations demandés hors périmètre fonctionnel "
     "validé en phase de cadrage",
-    "La formation de personnel autre que les équipes désignées par le "
-    "Groupe EB",
+    "La formation de personnel autre que les équipes désignées par la "
+    "Société Exemple",
     "Le support aux utilisateurs finaux, qui reste assuré par le service "
-    "d'assistance interne du Groupe EB",
+    "d'assistance interne de la Société Exemple",
     "Le renouvellement des équipements arrivés en fin de garantie, hors "
     "avenant spécifique",
     "La fourniture de postes de travail ou d'équipements bureautiques "
-    "standards du Groupe EB",
+    "standards de la Société Exemple",
 ]
 
 PERIMETRE_ELABORATION = [
-    "Cette prestation est réalisée selon les standards internes du Groupe "
-    "EB et documentée en conséquence.",
+    "Cette prestation est réalisée selon les standards internes de la "
+    "Société Exemple et documentée en conséquence.",
     "Le prestataire soumet un plan détaillé de cette activité avant son "
     "démarrage.",
     "Cette activité fait l'objet d'un point d'avancement dédié en comité de "
     "suivi.",
-    "Le Groupe EB désigne un interlocuteur référent pour valider cette "
+    "La Société Exemple désigne un interlocuteur référent pour valider cette "
     "activité.",
     "Cette activité est réalisée conjointement avec les équipes internes "
     "concernées.",
@@ -332,7 +332,7 @@ EXISTANT_TYPE = {
         "l'homogénéité des configurations et la gestion des correctifs de "
         "sécurité.",
         "Aucune redondance automatique n'est aujourd'hui en place entre les "
-        "principaux sites, ce qui expose le Groupe EB à une interruption "
+        "principaux sites, ce qui expose la Société Exemple à une interruption "
         "totale de service en cas de rupture d'un lien critique.",
     ],
     "logiciel": [
@@ -340,7 +340,7 @@ EXISTANT_TYPE = {
         "{anciennete_outil} ans et repose sur une architecture technique "
         "aujourd'hui difficile à faire évoluer. Il est utilisé par environ "
         "{users_actuels} utilisateurs répartis sur l'ensemble des sites du "
-        "Groupe EB.",
+        "Société Exemple.",
         "Les échanges de données avec les systèmes tiers reposent en grande "
         "partie sur des exports manuels et des fichiers plats, générant un "
         "risque d'erreur et une perte de traçabilité régulièrement signalée "
@@ -358,7 +358,7 @@ EXISTANT_TYPE = {
     "maintenance": [
         "Le parc couvert par la présente consultation compte environ "
         "{nb_equipements} équipements, répartis sur l'ensemble des sites du "
-        "Groupe EB, avec une ancienneté moyenne de {anciennete_parc} ans.",
+        "Société Exemple, avec une ancienneté moyenne de {anciennete_parc} ans.",
         "Les interventions sont aujourd'hui réalisées au cas par cas, sans "
         "engagement contractuel de délai, ce qui génère une variabilité "
         "importante du temps de résolution constatée par les directions "
@@ -488,7 +488,7 @@ EF_TYPE = {
         "mettre à disposition un portail de tickets accessible en "
         "permanence, avec accusé de réception automatique.",
         "qualifier chaque incident selon un niveau de criticité défini "
-        "conjointement avec le Groupe EB.",
+        "conjointement avec la Société Exemple.",
         "transmettre un rapport d'intervention détaillé à l'issue de "
         "chaque visite, préventive ou corrective.",
         "maintenir à jour l'inventaire des équipements couverts par le "
@@ -503,7 +503,7 @@ EF_TYPE = {
         "respecter les délais de rétablissement contractuels.",
         "réaliser un diagnostic à distance avant tout déplacement sur "
         "site, sauf incident bloquant.",
-        "communiquer sans délai au Groupe EB toute panne récurrente "
+        "communiquer sans délai à la Société Exemple toute panne récurrente "
         "constatée sur un même équipement.",
     ],
     "infrastructure": [
@@ -526,19 +526,19 @@ EF_TYPE = {
         "alerter automatiquement les équipes d'astreinte en cas de "
         "dépassement d'un seuil de capacité critique.",
         "permettre la restitution d'un rapport de conformité des "
-        "sauvegardes à la demande du Groupe EB.",
+        "sauvegardes à la demande de la Société Exemple.",
     ],
 }
 
 EF_GENERIQUE = [
-    "reposer sur une authentification unique adossée à l'annuaire LDAP du "
-    "Groupe EB.",
+    "reposer sur une authentification unique adossée à l'annuaire LDAP de la "
+    "Société Exemple.",
     "journaliser l'ensemble des opérations sensibles, avec conservation des "
-    "journaux pendant une durée conforme à la politique interne du Groupe "
-    "EB.",
+    "journaux pendant une durée conforme à la politique interne de la "
+    "Société Exemple.",
     "permettre la définition de profils d'accès distincts selon le rôle de "
     "l'utilisateur.",
-    "être disponible en français, langue de travail du Groupe EB, pour "
+    "être disponible en français, langue de travail de la Société Exemple, pour "
     "l'ensemble des écrans et documents livrés.",
     "garantir la conformité au Règlement Général sur la Protection des "
     "Données pour tout traitement de données à caractère personnel.",
@@ -552,10 +552,10 @@ EF_GENERIQUE = [
     "conforme aux obligations légales applicables.",
     "fournir un mécanisme de restauration après incident sans perte de "
     "données au-delà de l'objectif de point de reprise convenu.",
-    "restituer, sur demande du Groupe EB, un état complet des habilitations "
+    "restituer, sur demande de la Société Exemple, un état complet des habilitations "
     "actives à un instant donné.",
     "permettre la révocation immédiate des droits d'un utilisateur quittant "
-    "le Groupe EB.",
+    "la Société Exemple.",
 ]
 
 EF_RATIONALE = [
@@ -571,7 +571,7 @@ EF_RATIONALE = [
     "service fixés pour la prestation.",
     "Cette exigence a été formulée à la suite des incidents constatés sur "
     "le système actuel.",
-    "Cette exigence s'inscrit dans la politique de sécurité du Groupe EB.",
+    "Cette exigence s'inscrit dans la politique de sécurité de la Société Exemple.",
     "Cette exigence conditionne l'adhésion des utilisateurs finaux à la "
     "nouvelle solution.",
 ]
@@ -582,7 +582,7 @@ EF_VERIFICATION = [
     "Le respect de cette exigence conditionne le prononcé de la réception "
     "provisoire.",
     "Cette exigence fait l'objet d'un contrôle contradictoire entre le "
-    "prestataire et les équipes du Groupe EB.",
+    "prestataire et les équipes de la Société Exemple.",
     "La démonstration de cette exigence est intégrée au plan de tests de "
     "recette.",
     "Cette exigence est tracée dans la matrice de conformité remise avec "
@@ -590,7 +590,7 @@ EF_VERIFICATION = [
     "Le non-respect constaté de cette exigence ouvre un délai de reprise "
     "avant réception.",
     "Cette exigence est validée par un test fonctionnel réalisé en présence "
-    "d'un représentant du Groupe EB.",
+    "d'un représentant de la Société Exemple.",
     "La conformité à cette exigence est un préalable à la levée des "
     "réserves de réception.",
     "Cette exigence est vérifiée par échantillonnage lors de la période "
@@ -601,7 +601,7 @@ EF_VERIFICATION = [
 
 
 EF_IMPACT = [
-    "L'absence de cette fonctionnalité expose le Groupe EB à un risque "
+    "L'absence de cette fonctionnalité expose la Société Exemple à un risque "
     "opérationnel jugé significatif par la Direction des Systèmes "
     "d'Information.",
     "Cette exigence a un impact direct sur l'expérience quotidienne des "
@@ -613,7 +613,7 @@ EF_IMPACT = [
     "signalée et justifiée dans l'offre du prestataire.",
     "Cette exigence est reprise telle quelle dans le contrat final, sauf "
     "négociation explicite actée par écrit entre les parties.",
-    "Le Groupe EB se réserve le droit de demander une démonstration "
+    "La Société Exemple se réserve le droit de demander une démonstration "
     "anticipée de cette fonctionnalité avant la commande ferme.",
 ]
 
@@ -735,8 +735,8 @@ def build_specs_techniques(rng, typ, p, n):
 
 NORMES_GENERIQUE = [
     "Règlement Général sur la Protection des Données (RGPD)",
-    "Politique de sécurité des systèmes d'information du Groupe EB",
-    "Charte informatique interne du Groupe EB",
+    "Politique de sécurité des systèmes d'information de la Société Exemple",
+    "Charte informatique interne de la Société Exemple",
     "Réglementation marocaine relative à la protection des données à "
     "caractère personnel",
     "Règles internes d'achat et de qualification des prestataires",
@@ -752,13 +752,13 @@ NORMES_TYPE = {
 
 NORMES_DETAIL = [
     "Le prestataire produit les preuves de conformité correspondantes sur "
-    "demande du Groupe EB.",
+    "demande de la Société Exemple.",
     "Le respect de cette norme est vérifié lors de l'audit de recette.",
     "Toute non-conformité constatée est corrigée aux frais du prestataire "
     "avant la réception.",
     "Cette exigence s'applique pour toute la durée du marché, y compris "
     "pendant la période de garantie.",
-    "Le prestataire s'engage à informer le Groupe EB de toute évolution "
+    "Le prestataire s'engage à informer la Société Exemple de toute évolution "
     "réglementaire impactant cette exigence.",
 ]
 
@@ -781,12 +781,12 @@ def build_normes(rng, typ):
 def build_sla(rng, p):
     intro = (
         "Le taux de disponibilité mensuel minimal exigé est de {sla} %, "
-        "mesuré sur les heures ouvrées du Groupe EB. La Garantie de Temps "
+        "mesuré sur les heures ouvrées de la Société Exemple. La Garantie de Temps "
         "d'Intervention (GTI) et la Garantie de Temps de Rétablissement "
         "(GTR) sont fixées ci-dessous, en heures ouvrées à compter de "
         "l'ouverture du ticket d'incident.\n\n"
         "En cas de dépassement de la GTR, le prestataire en informe sans "
-        "délai le Groupe EB et propose un plan d'action correctif dans les "
+        "délai la Société Exemple et propose un plan d'action correctif dans les "
         "24 heures suivant le dépassement constaté."
     ).format(**p)
     lignes = [
@@ -806,12 +806,12 @@ def build_sla(rng, p):
         "\n\nLa disponibilité est calculée mensuellement selon la formule "
         "usuelle du temps de fonctionnement rapporté au temps total de la "
         "période, hors fenêtres de maintenance planifiée notifiées au "
-        "préalable au Groupe EB. Un relevé détaillé est transmis chaque "
+        "préalable à la Société Exemple. Un relevé détaillé est transmis chaque "
         "début de mois, accompagné de la liste des incidents survenus et de "
         "leur temps de résolution respectif.\n\n"
         "Toute contestation d'un relevé doit être formulée par écrit dans "
         "un délai de dix jours ouvrés suivant sa réception, faute de quoi "
-        "le relevé est réputé accepté par le Groupe EB."
+        "le relevé est réputé accepté par la Société Exemple."
     )
     return "\n".join(lignes) + procedure
 
@@ -861,9 +861,9 @@ LIVRABLES_TYPE = {
 
 LIVRABLE_DESC = [
     "Remis au format électronique via l'espace projet partagé.",
-    "Validé conjointement par le prestataire et le Groupe EB avant "
+    "Validé conjointement par le prestataire et la Société Exemple avant "
     "diffusion.",
-    "Rédigé en français, conforme au gabarit documentaire du Groupe EB.",
+    "Rédigé en français, conforme au gabarit documentaire de la Société Exemple.",
     "Mis à jour à chaque évolution significative constatée en cours de "
     "prestation.",
     "Versionné et archivé par le prestataire pendant toute la durée du "
@@ -879,10 +879,10 @@ def build_livrables(rng, typ):
     lignes.append("")
     lignes.append(
         "Chaque livrable fait l'objet d'une vérification de conformité par "
-        "le Groupe EB avant acceptation. Un livrable rejeté est repris par "
+        "la Société Exemple avant acceptation. Un livrable rejeté est repris par "
         "le prestataire sans incidence sur le délai contractuel global, "
         "sauf si le rejet résulte d'une modification du périmètre demandée "
-        "par le Groupe EB."
+        "par la Société Exemple."
     )
     return "\n".join(lignes)
 
@@ -904,11 +904,11 @@ PHASES = [
 
 PLANNING_ACTIVITES = [
     "Rédaction et diffusion du compte-rendu de phase",
-    "Point d'avancement hebdomadaire avec le chef de projet Groupe EB",
+    "Point d'avancement hebdomadaire avec le chef de projet Société Exemple",
     "Validation du jalon par le comité de pilotage",
     "Mise à jour du registre des risques",
     "Recueil des réserves éventuelles et plan de levée associé",
-    "Mise à jour du planning détaillé partagé avec le Groupe EB",
+    "Mise à jour du planning détaillé partagé avec la Société Exemple",
     "Vérification des prérequis de la phase suivante",
 ]
 
@@ -918,7 +918,7 @@ def build_planning(rng, n):
     lignes = [
         "Le projet est découpé en phases successives, chacune donnant lieu "
         "à un jalon de validation formalisé par un compte-rendu "
-        "contradictoire entre le prestataire et le Groupe EB. Le passage à "
+        "contradictoire entre le prestataire et la Société Exemple. Le passage à "
         "la phase suivante est conditionné à la levée des réserves "
         "éventuelles de la phase précédente.", "",
     ]
@@ -944,7 +944,7 @@ def build_delais_penalites(rng, p):
     return (
         "Le respect du calendrier contractuel constitue une obligation "
         "essentielle du prestataire. Tout risque de dérive doit être "
-        "signalé sans délai au Groupe EB, accompagné d'un plan de "
+        "signalé sans délai à la Société Exemple, accompagné d'un plan de "
         "récupération proposé par le prestataire.\n\n"
         "Le délai global d'exécution est fixé à {delai} jours calendaires à "
         "compter de la notification de l'ordre de service. Ce délai est "
@@ -953,7 +953,7 @@ def build_delais_penalites(rng, p):
         "En cas de retard imputable au prestataire, une pénalité de {pen} % "
         "du montant total du marché est appliquée par jour calendaire de "
         "retard. Le montant cumulé des pénalités est plafonné à {plafond} % "
-        "du montant du marché. Au-delà de ce plafond, le Groupe EB se "
+        "du montant du marché. Au-delà de ce plafond, la Société Exemple se "
         "réserve le droit de résilier le marché aux torts exclusifs du "
         "prestataire, sans préjudice des dommages et intérêts.\n\n"
         "La prestation est garantie {garantie} mois à compter de la date de "
@@ -964,7 +964,7 @@ def build_delais_penalites(rng, p):
         "être conclu par avenant, aux conditions tarifaires proposées dans "
         "l'offre initiale. Le prestataire communique, avant l'échéance de "
         "la garantie, un état des lieux détaillé du périmètre couvert, "
-        "permettant au Groupe EB d'apprécier l'opportunité de reconduire la "
+        "permettant à la Société Exemple d'apprécier l'opportunité de reconduire la "
         "relation contractuelle."
     ).format(**p)
 
@@ -987,7 +987,7 @@ def build_financier(rng, p):
         "prestation de services.\n\n"
         "Les factures sont établies selon les jalons décrits au chapitre "
         "Planning et jalons, et accompagnées des pièces justificatives "
-        "requises par la Direction Financière du Groupe EB. Toute facture "
+        "requises par la Direction Financière de la Société Exemple. Toute facture "
         "incomplète est retournée au prestataire et suspend le délai de "
         "règlement jusqu'à régularisation.\n\n"
         "Les prix proposés sont réputés fermes pour toute la durée du "
@@ -1147,7 +1147,7 @@ def build_document(rng, typ, subject, ref, annee, p):
         f"CAHIER DES CHARGES\n"
         f"Référence : {ref}\n"
         f"Objet : {subject}\n"
-        f"Maître d'ouvrage : Groupe EB — Direction des Systèmes "
+        f"Maître d'ouvrage : Société Exemple — Direction des Systèmes "
         f"d'Information\n"
         f"Date : {p['jour']} {p['mois']} {annee}\n"
         f"Version : 1.0\n"

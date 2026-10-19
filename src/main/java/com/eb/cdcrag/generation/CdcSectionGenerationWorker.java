@@ -20,19 +20,21 @@ public class CdcSectionGenerationWorker {
     private static final Logger log = LoggerFactory.getLogger(CdcSectionGenerationWorker.class);
     private static final int EXAMPLES_K = 4;
     /** Nom commun, sans article : l'article se fusionne à la substitution
-     * (le/du/au Groupe EB -> le/du/au donneur d'ordre), voir sanitize(). */
+     * (la/de la/à la Société Exemple -> le/du/au donneur d'ordre), voir sanitize(). */
     private static final String DEFAULT_CLIENT_LABEL = "donneur d'ordre";
 
     /** Filet de sécurité déterministe : le corpus synthétique n'a qu'une
-     * seule organisation fictive ("Groupe EB"), répétée dans presque toutes
+     * seule organisation fictive ("Société Exemple"), répétée dans presque toutes
      * les phrases-gabarits de tools/generate_corpus.py. À température 0.2,
      * le modèle recopie parfois ce nom malgré la consigne du prompt (constaté
      * empiriquement : ~2 sections sur 13 sur une régénération complète, même
      * après retrait de l'auto-référence). Comme pour ClauseExtractor, on ne
      * fait pas confiance au LLM seul sur ce qui doit être garanti. */
     private static final Pattern ARTICLED_CORPUS_ORG =
-            Pattern.compile("\\b(le|la|du|au)\\s+groupe\\s*eb\\b", Pattern.CASE_INSENSITIVE);
-    private static final Pattern BARE_CORPUS_ORG = Pattern.compile("groupe\\s*eb", Pattern.CASE_INSENSITIVE);
+            Pattern.compile("\\b(le|la|du|de\\s+la|au|à\\s+la)\\s+société\\s+exemple\\b",
+                Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        private static final Pattern BARE_CORPUS_ORG =
+            Pattern.compile("société\\s+exemple", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
 
     /** Filet de sécurité déterministe pour une déformation lexicale
      * observée en pratique : le modèle écrit parfois "donateur d'ordre" à la
@@ -190,9 +192,9 @@ public class CdcSectionGenerationWorker {
             """.formatted(cdcType, brief, consigne, sommaire, clientLabel);
     }
 
-    /** Remplace "Groupe EB" par le client réel, en fusionnant l'article
-     * français plutôt qu'en le dupliquant ("Le Groupe EB" -> "Le donneur
-     * d'ordre", pas "Le le donneur d'ordre" ; "du Groupe EB" -> "du donneur
+    /** Remplace "Société Exemple" par le client réel, en fusionnant l'article
+        * français plutôt qu'en le dupliquant ("La Société Exemple" -> "Le donneur
+    * d'ordre", pas "Le le donneur d'ordre" ; "de la Société Exemple" -> "du donneur
      * d'ordre"). Un nom d'organisation configuré est un nom propre : pas de
      * fusion, substitution telle quelle. */
     private String sanitizeClientName(String text) {
@@ -203,8 +205,8 @@ public class CdcSectionGenerationWorker {
             String replacement;
             if (genericClientLabel) {
                 String mergedArticle = switch (article.toLowerCase()) {
-                    case "du" -> "du";
-                    case "au" -> "au";
+                    case "du", "de la" -> "du";
+                    case "au", "à la" -> "au";
                     default -> "le";
                 };
                 if (Character.isUpperCase(article.charAt(0))) {

@@ -73,7 +73,7 @@ def _pdf_header_footer(canvas, doc, meta):
     canvas.rect(0, h - 1.4 * cm, w, 1.4 * cm, fill=1, stroke=0)
     canvas.setFillColor("white")
     canvas.setFont("Helvetica-Bold", 12)
-    canvas.drawString(2.5 * cm, h - 1.0 * cm, "GROUPE EB")
+    canvas.drawString(2.5 * cm, h - 1.0 * cm, "SOCIÉTÉ EXEMPLE")
     canvas.setFont("Helvetica", 8)
     canvas.drawRightString(w - 2.5 * cm, h - 1.0 * cm,
                            "Direction des Systèmes d'Information")
@@ -148,7 +148,7 @@ def write_docx(path, text):
 
     section = d.sections[0]
     header_p = section.header.paragraphs[0]
-    header_p.text = "GROUPE EB — Direction des Systèmes d'Information"
+    header_p.text = "SOCIÉTÉ EXEMPLE — Direction des Systèmes d'Information"
     header_p.runs[0].bold = True
     header_p.runs[0].font.color.rgb = RGBColor(0x1C, 0x3F, 0x60)
 

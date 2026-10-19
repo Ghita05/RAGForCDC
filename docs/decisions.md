@@ -178,7 +178,7 @@
   le Reviewer, qui lisait `cdc.body()`. Corrigé en reconstituant le texte à
   partir des sections DRAFT (`CdcSectionRepository.assembleDraftBody`)
   plutôt que de garder un champ dupliqué à resynchroniser.
-- Le nom du client fictif du corpus (« Groupe EB ») fuitait dans les CDC
+- Le nom du client fictif du corpus (« Société Exemple ») fuitait dans les CDC
   générés : les extraits injectés dans le prompt comme inspiration de style
   contiennent le nom de LEUR client, et le modèle le recopie sans qu'on le
   lui demande -- un cas de plus dans la même famille que qwen2.5:3b inventant
@@ -186,7 +186,7 @@
   "exemple de style" de "fait à reprendre".
 - Une règle de prompt seule ne suffit pas à garantir ça : sur une
   régénération complète des 13 sections obligatoires du CDC 5, 10 sections
-  contenaient encore « Groupe EB » malgré la règle explicite. Certaines
+  contenaient encore « Société Exemple » malgré la règle explicite. Certaines
   sections courtes et fortement gabarisées (`objet` n'a que 3 formulations
   possibles dans tools/generate_corpus.py) sont recopiées quasi verbatim à
   température 0.2, et l'auto-référence (le CDC en cours de régénération
@@ -199,8 +199,8 @@
     d'ordre ». Réduit la fréquence, ne suffit pas seul.
   - Filet de sécurité déterministe (`sanitizeClientName`) : substitution
     regex garantie après génération, avec fusion de l'article français
-    plutôt que duplication (« Le Groupe EB » -> « Le donneur d'ordre », pas
-    « Le le donneur d'ordre » ; « du Groupe EB » -> « du donneur d'ordre »).
+    plutôt que duplication (« La Société Exemple » -> « Le donneur d'ordre », pas
+    « Le le donneur d'ordre » ; « de la Société Exemple » -> « du donneur d'ordre »).
     Même logique que ClauseExtractor/DeviationChecker : ce qui doit être
     garanti ne se confie pas au LLM seul.
   Vérifié à zéro occurrence sur les 13 sections du CDC 5 après régénération
