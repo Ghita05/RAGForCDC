@@ -1,0 +1,21 @@
+filename,ref,cdc_type,objet,delai_jours,penalite_pct_jour,plafond_pct,garantie_mois,sla_pct,gtr_heures,retenue_pct,paiement_jours,montant_kdh
+CDC-2023-101_reseau.txt,CDC-2023-101,reseau,Déploiement d'une liaison fibre optique entre les sites de Agadir et Tétouan,90,"0,8",15,12,"99,0",48,5,30,350
+CDC-2025-102_reseau.pdf,CDC-2025-102,reseau,Refonte du réseau local du siège de Fès,45,"0,3",10,24,"99,7",48,10,30,480
+CDC-2023-103_reseau.docx,CDC-2023-103,reseau,Mise en place d'un réseau Wi-Fi haute densité au centre de formation de Fès,60,"0,5",5,36,"99,8",24,10,60,180
+CDC-2025-104_reseau.txt,CDC-2025-104,reseau,Interconnexion VPN sécurisée des agences régionales,90,"0,5",10,24,"99,8",72,10,45,180
+CDC-2025-105_reseau.pdf,CDC-2025-105,reseau,Déploiement d'un réseau de vidéosurveillance IP sur le site de Tanger,60,"0,3",8,36,"99,5",24,10,30,350
+CDC-2024-106_logiciel.docx,CDC-2024-106,logiciel,Développement d'une application de gestion des stocks multi-entrepôts,60,1,8,12,"99,7",8,10,60,480
+CDC-2025-107_logiciel.txt,CDC-2025-107,logiciel,Refonte du portail intranet des ressources humaines,75,"0,2",10,12,"99,9",4,5,60,850
+CDC-2025-108_logiciel.pdf,CDC-2025-108,logiciel,Mise en place d'une solution de gestion électronique des documents,120,1,15,24,"99,5",8,10,30,850
+CDC-2024-109_logiciel.docx,CDC-2024-109,logiciel,Développement d'une application mobile de saisie terrain,60,1,15,12,"99,0",72,10,45,620
+CDC-2023-110_logiciel.txt,CDC-2023-110,logiciel,Développement d'un module de facturation intégré à l'ERP,60,"0,2",15,36,"99,7",72,5,30,240
+CDC-2025-111_maintenance.pdf,CDC-2025-111,maintenance,Maintenance préventive et corrective du parc informatique,90,"0,3",8,36,"99,0",4,5,30,620
+CDC-2024-112_maintenance.docx,CDC-2024-112,maintenance,Tierce maintenance applicative du système de gestion commerciale,60,"0,5",8,36,"99,9",72,5,60,620
+CDC-2024-113_maintenance.txt,CDC-2024-113,maintenance,Maintenance des équipements de climatisation de la salle serveurs,45,"0,3",10,12,"99,9",4,5,30,620
+CDC-2023-114_maintenance.pdf,CDC-2023-114,maintenance,Maintenance du parc d'imprimantes multifonctions,75,"0,8",5,12,"99,0",24,5,45,240
+CDC-2025-115_maintenance.docx,CDC-2025-115,maintenance,Maintenance des équipements réseau et de sécurité périmétrique,75,"0,8",15,24,"99,0",72,10,30,850
+CDC-2025-116_infrastructure.txt,CDC-2025-116,infrastructure,Modernisation de la salle serveurs du site de Fès,120,1,8,36,"99,0",24,10,60,620
+CDC-2024-117_infrastructure.pdf,CDC-2024-117,infrastructure,Mise en place d'une solution de sauvegarde et de reprise d'activité,45,"0,2",15,24,"99,9",72,10,60,180
+CDC-2025-118_infrastructure.docx,CDC-2025-118,infrastructure,Virtualisation du parc de serveurs physiques,75,"0,8",5,12,"99,9",8,5,60,350
+CDC-2025-119_infrastructure.txt,CDC-2025-119,infrastructure,Renouvellement des onduleurs et de la distribution électrique,90,"0,2",15,24,"99,5",72,5,45,1200
+CDC-2025-120_infrastructure.pdf,CDC-2025-120,infrastructure,Migration de l'infrastructure de messagerie d'entreprise,75,"0,5",5,24,"99,7",8,10,45,480

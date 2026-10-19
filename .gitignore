@@ -1,0 +1,9 @@
+target/
+*.class
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+!.env.local.example
+uploads/

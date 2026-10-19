@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: cdc-rag
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/cdcrag}
+    username: ${DB_USER:ghita}
+    password: ${DB_PASSWORD:}
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+server:
+  port: 8080
+app:
+  # Nom du client à utiliser dans le texte généré, à la place des noms
+  # d'organisation qui apparaissent dans les exemples du corpus (voir
+  # CdcSectionGenerationWorker). Non défini : "le donneur d'ordre" générique.
+  # Miroir de NEXT_PUBLIC_ORG_NAME côté web/ -- deux runtimes séparés, donc
+  # deux variables, mais à garder synchronisées en déploiement.
+  org-name: ${ORG_NAME:}
+cdcrag:
+  ollama:
+    # Liste d'URL séparées par des virgules, une instance Ollama par URL
+    # (voir OllamaClient) -- une seule URL reste un cas valide. Le nombre
+    # d'instances dimensionne aussi generationExecutor (AsyncConfig, un
+    # thread par instance) : ne pas mettre deux fois localhost, la
+    # contrainte RAM (une seule génération 7b à la fois par machine) reste
+    # valable par machine, pas globalement.
+    urls: ${OLLAMA_URLS:http://localhost:11434}

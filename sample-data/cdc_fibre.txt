@@ -1,0 +1,18 @@
+CAHIER DES CHARGES — DÉPLOIEMENT D'UN RÉSEAU FIBRE OPTIQUE
+
+1. Objet
+Ce cahier des charges décrit les exigences pour le déploiement d'un réseau de
+fibre optique reliant trois sites de l'entreprise.
+
+2. Délais et pénalités
+Le délai de livraison est fixé à quatre-vingt-dix (90) jours calendaires à
+compter de la notification. Tout retard entraîne une pénalité de 0,5 % du
+montant total par jour, plafonnée à 10 % du marché.
+
+3. Garantie et maintenance
+Le prestataire assure une garantie de deux (2) ans, avec une intervention sous
+4 heures ouvrées en cas d'incident critique.
+
+4. Réception
+La réception est prononcée après une phase de recette de quinze (15) jours
+durant laquelle les débits et la disponibilité sont mesurés.

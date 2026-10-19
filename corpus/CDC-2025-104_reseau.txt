@@ -1,0 +1,306 @@
+CAHIER DES CHARGES
+Référence : CDC-2025-104
+Objet : Interconnexion VPN sécurisée des agences régionales
+Maître d'ouvrage : Groupe EB — Direction des Systèmes d'Information
+Date : 8 mai 2025
+Version : 1.0
+Diffusion : restreinte — usage interne et prestataires consultés
+
+1. Contexte et enjeux
+
+La présente consultation s'inscrit dans une démarche de renforcement de la résilience et de la performance des services informatiques du Groupe EB, engagée depuis 5 ans à l'initiative de la Direction Générale.
+
+Le Groupe EB emploie plus de 1800 collaborateurs répartis sur 12 sites au Maroc. La Direction des Systèmes d'Information pilote l'ensemble des projets d'évolution du système d'information pour le compte des directions métier.
+
+Dans le cadre de son plan stratégique 2025-2028, le Groupe EB poursuit la modernisation de son système d'information afin de soutenir la croissance de ses activités et d'améliorer la qualité de service rendue à ses clients internes et externes.
+
+Le réseau actuel montre des signes de saturation aux heures de pointe et ne permet plus d'absorber la croissance du trafic liée au déploiement des nouveaux outils collaboratifs. Les incidents de connectivité, bien que rares, ont un impact direct sur l'activité des équipes concernées.
+
+La multiplication des sites et des usages mobiles impose une revue complète de l'architecture réseau existante, afin de garantir un niveau de service homogène quel que soit le point d'accès.
+
+Le Groupe EB attend du prestataire retenu une capacité à s'intégrer aux processus internes existants, tout en proposant les évolutions nécessaires à l'atteinte des objectifs fixés.
+
+L'enjeu principal de cette consultation est de garantir la continuité de service pour l'ensemble des directions métier concernées, sans dégradation perceptible pendant la période de transition.
+
+2. Objet de la consultation
+
+Le Groupe EB souhaite confier à un prestataire qualifié la réalisation de la prestation suivante : Interconnexion VPN sécurisée des agences régionales. Ce document en fixe le périmètre, les exigences techniques et fonctionnelles, le calendrier contractuel, les conditions financières ainsi que les conditions de recette. Toute offre déposée dans le cadre de cette consultation doit répondre point par point aux exigences formulées ci-après.
+
+3. Périmètre de la prestation
+
+La prestation est réalisée dans le cadre d'un marché forfaitaire. Toute activité non listée ci-dessous mais nécessaire à l'atteinte du résultat attendu est réputée incluse, sauf mention contraire explicite.
+
+Sont inclus dans le périmètre de la prestation :
+
+- Paramétrage de la supervision et des alertes. Le prestataire soumet un plan détaillé de cette activité avant son démarrage.
+- Étude d'ingénierie et validation de l'architecture cible.
+- Fourniture, installation et configuration des équipements actifs. Le prestataire soumet un plan détaillé de cette activité avant son démarrage.
+- Formation des équipes techniques internes. Le Groupe EB désigne un interlocuteur référent pour valider cette activité.
+- Câblage et raccordement conformes aux normes en vigueur.
+- Documentation d'exploitation et schémas d'architecture.
+- Tests de conformité et de charge avant mise en production. Cette prestation est réalisée selon les standards internes du Groupe EB et documentée en conséquence.
+- Accompagnement lors de la bascule en production. Cette prestation est réalisée selon les standards internes du Groupe EB et documentée en conséquence.
+
+Sont explicitement exclus du périmètre :
+
+- Les développements ou adaptations demandés hors périmètre fonctionnel validé en phase de cadrage.
+- La fourniture de postes de travail ou d'équipements bureautiques standards du Groupe EB.
+- Le câblage ou les travaux relevant du génie civil, sauf mention contraire explicite du présent document.
+- L'exploitation courante au-delà de la période de garantie contractuelle.
+
+4. Analyse de l'existant
+
+La volumétrie de trafic observée sur le site principal atteint en moyenne 300 Go par jour ouvré, avec des pics constatés en début et fin de journée. Aucune supervision centralisée ne permet aujourd'hui d'anticiper la saturation d'un lien.
+
+Les équipements actifs proviennent de plusieurs constructeurs, acquis sur des exercices budgétaires différents, ce qui complique l'homogénéité des configurations et la gestion des correctifs de sécurité.
+
+Le câblage de certains sites reste partiellement non structuré, ce qui complique les opérations de maintenance et allonge les délais de diagnostic en cas d'incident. Un audit interne a confirmé la nécessité d'une intervention à court terme sur ce périmètre.
+
+Aucune redondance automatique n'est aujourd'hui en place entre les principaux sites, ce qui expose le Groupe EB à une interruption totale de service en cas de rupture d'un lien critique. Les équipes internes ne disposent pas aujourd'hui des moyens nécessaires pour traiter cette situation sans appui externe.
+
+Le réseau actuel repose sur une architecture historique déployée en plusieurs phases, sans schéma directeur unifié. Les débits disponibles entre sites varient de 10 à 1000 Mbit/s selon les liaisons, avec des équipements dont certains approchent la fin de vie constructeur. Les équipes internes ne disposent pas aujourd'hui des moyens nécessaires pour traiter cette situation sans appui externe.
+
+5. Expression du besoin fonctionnel
+
+EF-01. Le dispositif mis en œuvre doit fournir une documentation d'exploitation permettant aux équipes internes d'assurer le support de premier niveau. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Le prestataire documente la mise en œuvre de cette exigence dans le dossier de recette. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-02. L'outil déployé doit permettre l'ajout d'un nouveau site raccordé sans interruption de service sur les sites existants. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. Cette exigence est validée par un test fonctionnel réalisé en présence d'un représentant du Groupe EB. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-03. La solution retenue doit fournir un tableau de bord consultable par les équipes techniques, présentant la disponibilité de chaque équipement actif. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-04. L'application livrée doit être disponible en français, langue de travail du Groupe EB, pour l'ensemble des écrans et documents livrés. Cette exigence a été formulée à la suite des incidents constatés sur le système actuel. La conformité à cette exigence est un préalable à la levée des réserves de réception. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-05. Le dispositif mis en œuvre doit reposer sur une authentification unique adossée à l'annuaire LDAP du Groupe EB. Cette exigence vise à réduire le risque opérationnel identifié sur le périmètre actuel. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-06. L'application livrée doit permettre la sauvegarde régulière des données selon une politique définie conjointement avec la Direction des Systèmes d'Information. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Cette exigence est tracée dans la matrice de conformité remise avec l'offre. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-07. Le système doit reposer sur une authentification unique adossée à l'annuaire LDAP du Groupe EB. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-08. La solution retenue doit permettre l'archivage des données selon une durée de conservation conforme aux obligations légales applicables. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Cette exigence est tracée dans la matrice de conformité remise avec l'offre. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-09. Le dispositif mis en œuvre doit permettre la restriction d'accès aux équipements d'administration par adresse IP source. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. La conformité à cette exigence est un préalable à la levée des réserves de réception. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-10. La solution retenue doit permettre la segmentation logique du trafic par direction métier, avec des règles de filtrage indépendantes. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-11. Le dispositif mis en œuvre doit permettre la segmentation logique du trafic par direction métier, avec des règles de filtrage indépendantes. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-12. L'outil déployé doit permettre la génération d'un rapport mensuel de disponibilité par lien. Cette exigence vise à réduire le risque opérationnel identifié sur le périmètre actuel. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-13. Le système doit permettre la remontée d'alerte vers l'équipe d'astreinte en cas d'anomalie bloquante. Cette exigence vise à réduire le risque opérationnel identifié sur le périmètre actuel. Le non-respect constaté de cette exigence ouvre un délai de reprise avant réception. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-14. La solution retenue doit permettre la sauvegarde régulière des données selon une politique définie conjointement avec la Direction des Systèmes d'Information. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. La conformité à cette exigence est un préalable à la levée des réserves de réception. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-15. La solution retenue doit journaliser l'ensemble des opérations sensibles, avec conservation des journaux pendant une durée conforme à la politique interne du Groupe EB. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-16. L'outil déployé doit permettre la définition de profils d'accès distincts selon le rôle de l'utilisateur. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-17. L'application livrée doit fournir une documentation d'exploitation permettant aux équipes internes d'assurer le support de premier niveau. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. La conformité à cette exigence est un préalable à la levée des réserves de réception. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-18. La solution retenue doit permettre la restriction d'accès aux équipements d'administration par adresse IP source. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-19. L'outil déployé doit permettre l'archivage des données selon une durée de conservation conforme aux obligations légales applicables. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-20. L'application livrée doit permettre l'ajout d'un nouveau site raccordé sans interruption de service sur les sites existants. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-21. La solution retenue doit permettre la génération d'un rapport mensuel de disponibilité par lien. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. Cette exigence est tracée dans la matrice de conformité remise avec l'offre. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-22. Le système doit journaliser toute modification de configuration des équipements actifs, avec horodatage et identification de l'auteur. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-23. L'application livrée doit permettre l'archivage des données selon une durée de conservation conforme aux obligations légales applicables. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Le non-respect constaté de cette exigence ouvre un délai de reprise avant réception. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-24. La solution retenue doit fournir un mécanisme de restauration après incident sans perte de données au-delà de l'objectif de point de reprise convenu. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-25. L'application livrée doit journaliser l'ensemble des opérations sensibles, avec conservation des journaux pendant une durée conforme à la politique interne du Groupe EB. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Cette exigence est validée par un test fonctionnel réalisé en présence d'un représentant du Groupe EB. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-26. La solution retenue doit permettre la supervision en temps réel de l'état de chaque lien inter-sites, avec remontée d'alerte automatique en cas de dégradation. Cette exigence vise à réduire le risque opérationnel identifié sur le périmètre actuel. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-27. Le système doit être disponible en français, langue de travail du Groupe EB, pour l'ensemble des écrans et documents livrés. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. La démonstration de cette exigence est intégrée au plan de tests de recette. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-28. La solution retenue doit reposer sur une authentification unique adossée à l'annuaire LDAP du Groupe EB. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. Cette exigence fait l'objet d'un contrôle contradictoire entre le prestataire et les équipes du Groupe EB. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-29. L'outil déployé doit permettre la segmentation logique du trafic par direction métier, avec des règles de filtrage indépendantes. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. La démonstration de cette exigence est intégrée au plan de tests de recette. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-30. Le système doit garantir la bascule automatique vers le lien de secours en cas de rupture du lien principal, sans intervention manuelle. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. La conformité à cette exigence est un préalable à la levée des réserves de réception. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-31. Le système doit garantir la conformité au Règlement Général sur la Protection des Données pour tout traitement de données à caractère personnel. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Le prestataire documente la mise en œuvre de cette exigence dans le dossier de recette. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-32. Le dispositif mis en œuvre doit permettre la sauvegarde automatisée des configurations de l'ensemble des équipements actifs. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Le prestataire documente la mise en œuvre de cette exigence dans le dossier de recette. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-33. L'application livrée doit fournir un mécanisme de restauration après incident sans perte de données au-delà de l'objectif de point de reprise convenu. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. Le non-respect constaté de cette exigence ouvre un délai de reprise avant réception. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-34. Le dispositif mis en œuvre doit permettre la génération d'un rapport mensuel de disponibilité par lien. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-35. L'application livrée doit permettre la génération d'un rapport mensuel de disponibilité par lien. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. Cette exigence est tracée dans la matrice de conformité remise avec l'offre. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-36. Le dispositif mis en œuvre doit fournir un tableau de bord consultable par les équipes techniques, présentant la disponibilité de chaque équipement actif. Cette exigence a été formulée à la suite des incidents constatés sur le système actuel. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-37. La solution retenue doit permettre la révocation immédiate des droits d'un utilisateur quittant le Groupe EB. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. La démonstration de cette exigence est intégrée au plan de tests de recette. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-38. L'outil déployé doit permettre la supervision en temps réel de l'état de chaque lien inter-sites, avec remontée d'alerte automatique en cas de dégradation. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Cette exigence fait l'objet d'un contrôle contradictoire entre le prestataire et les équipes du Groupe EB. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-39. La solution retenue doit garantir la bascule automatique vers le lien de secours en cas de rupture du lien principal, sans intervention manuelle. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. La conformité à cette exigence est un préalable à la levée des réserves de réception. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-40. L'application livrée doit permettre la restriction d'accès aux équipements d'administration par adresse IP source. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Le prestataire documente la mise en œuvre de cette exigence dans le dossier de recette. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-41. L'outil déployé doit fournir une documentation d'exploitation permettant aux équipes internes d'assurer le support de premier niveau. Cette exigence a été formulée à la suite des incidents constatés sur le système actuel. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-42. La solution retenue doit permettre la remontée d'alerte vers l'équipe d'astreinte en cas d'anomalie bloquante. Cette exigence vise à réduire le risque opérationnel identifié sur le périmètre actuel. Le prestataire documente la mise en œuvre de cette exigence dans le dossier de recette. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-43. L'application livrée doit fournir un tableau de bord consultable par les équipes techniques, présentant la disponibilité de chaque équipement actif. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Le prestataire documente la mise en œuvre de cette exigence dans le dossier de recette. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-44. Le système doit détecter automatiquement toute tentative de connexion non autorisée sur les équipements actifs. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Le prestataire documente la mise en œuvre de cette exigence dans le dossier de recette. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-45. Le dispositif mis en œuvre doit permettre la révocation immédiate des droits d'un utilisateur quittant le Groupe EB. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Le non-respect constaté de cette exigence ouvre un délai de reprise avant réception. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-46. L'outil déployé doit restituer, sur demande du Groupe EB, un état complet des habilitations actives à un instant donné. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Le non-respect constaté de cette exigence ouvre un délai de reprise avant réception. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-47. Le dispositif mis en œuvre doit fournir un mécanisme de restauration après incident sans perte de données au-delà de l'objectif de point de reprise convenu. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-48. Le système doit permettre la sauvegarde automatisée des configurations de l'ensemble des équipements actifs. Cette exigence vise à réduire le risque opérationnel identifié sur le périmètre actuel. La démonstration de cette exigence est intégrée au plan de tests de recette. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-49. L'outil déployé doit détecter automatiquement toute tentative de connexion non autorisée sur les équipements actifs. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. Cette exigence est tracée dans la matrice de conformité remise avec l'offre. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-50. L'outil déployé doit journaliser toute modification de configuration des équipements actifs, avec horodatage et identification de l'auteur. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-51. L'outil déployé doit reposer sur une authentification unique adossée à l'annuaire LDAP du Groupe EB. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-52. L'outil déployé doit journaliser l'ensemble des opérations sensibles, avec conservation des journaux pendant une durée conforme à la politique interne du Groupe EB. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Cette exigence est tracée dans la matrice de conformité remise avec l'offre. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-53. Le système doit permettre l'archivage des données selon une durée de conservation conforme aux obligations légales applicables. Cette exigence vise à réduire le risque opérationnel identifié sur le périmètre actuel. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-54. L'application livrée doit restituer, sur demande du Groupe EB, un état complet des habilitations actives à un instant donné. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-55. La solution retenue doit restituer, sur demande du Groupe EB, un état complet des habilitations actives à un instant donné. Cette exigence a été formulée à la suite des incidents constatés sur le système actuel. Cette exigence est tracée dans la matrice de conformité remise avec l'offre. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-56. La solution retenue doit permettre la sauvegarde automatisée des configurations de l'ensemble des équipements actifs. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Le respect de cette exigence conditionne le prononcé de la réception provisoire. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-57. Le dispositif mis en œuvre doit journaliser l'ensemble des opérations sensibles, avec conservation des journaux pendant une durée conforme à la politique interne du Groupe EB. Cette exigence a été formulée à la suite des incidents constatés sur le système actuel. Cette exigence est validée par un test fonctionnel réalisé en présence d'un représentant du Groupe EB. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-58. L'application livrée doit garantir la conformité au Règlement Général sur la Protection des Données pour tout traitement de données à caractère personnel. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Le respect de cette exigence conditionne le prononcé de la réception provisoire. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-59. L'outil déployé doit être disponible en français, langue de travail du Groupe EB, pour l'ensemble des écrans et documents livrés. Cette exigence contribue directement aux objectifs de qualité de service fixés pour la prestation. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-60. L'application livrée doit permettre la supervision en temps réel de l'état de chaque lien inter-sites, avec remontée d'alerte automatique en cas de dégradation. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Le prestataire documente la mise en œuvre de cette exigence dans le dossier de recette. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-61. Le dispositif mis en œuvre doit détecter automatiquement toute tentative de connexion non autorisée sur les équipements actifs. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-62. La solution retenue doit garantir la conformité au Règlement Général sur la Protection des Données pour tout traitement de données à caractère personnel. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-63. Le dispositif mis en œuvre doit permettre l'archivage des données selon une durée de conservation conforme aux obligations légales applicables. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. La démonstration de cette exigence est intégrée au plan de tests de recette. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-64. Le dispositif mis en œuvre doit permettre la définition de profils d'accès distincts selon le rôle de l'utilisateur. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Cette exigence fait l'objet d'un contrôle contradictoire entre le prestataire et les équipes du Groupe EB. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-65. L'outil déployé doit permettre la restriction d'accès aux équipements d'administration par adresse IP source. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Cette exigence est vérifiée par échantillonnage lors de la période d'observation. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-66. Le dispositif mis en œuvre doit journaliser toute modification de configuration des équipements actifs, avec horodatage et identification de l'auteur. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-67. Le système doit permettre la révocation immédiate des droits d'un utilisateur quittant le Groupe EB. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. La conformité à cette exigence est un préalable à la levée des réserves de réception. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-68. Le dispositif mis en œuvre doit restituer, sur demande du Groupe EB, un état complet des habilitations actives à un instant donné. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-69. L'application livrée doit permettre la sauvegarde automatisée des configurations de l'ensemble des équipements actifs. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. La conformité à cette exigence est un préalable à la levée des réserves de réception. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-70. Le dispositif mis en œuvre doit permettre l'ajout d'un nouveau site raccordé sans interruption de service sur les sites existants. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. La conformité à cette exigence est un préalable à la levée des réserves de réception. Cette exigence a un impact direct sur l'expérience quotidienne des utilisateurs finaux du système.
+EF-71. Le dispositif mis en œuvre doit garantir la conformité au Règlement Général sur la Protection des Données pour tout traitement de données à caractère personnel. Cette exigence a été formulée à la suite des incidents constatés sur le système actuel. La conformité à cette exigence est un préalable à la levée des réserves de réception. Cette exigence est reprise telle quelle dans le contrat final, sauf négociation explicite actée par écrit entre les parties.
+EF-72. L'application livrée doit permettre la définition de profils d'accès distincts selon le rôle de l'utilisateur. Cette exigence conditionne l'adhésion des utilisateurs finaux à la nouvelle solution. Le non-respect constaté de cette exigence ouvre un délai de reprise avant réception. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-73. L'outil déployé doit permettre la sauvegarde régulière des données selon une politique définie conjointement avec la Direction des Systèmes d'Information. Cette exigence est jugée prioritaire par la Direction des Systèmes d'Information. Le respect de cette exigence conditionne le prononcé de la réception provisoire. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-74. Le système doit journaliser l'ensemble des opérations sensibles, avec conservation des journaux pendant une durée conforme à la politique interne du Groupe EB. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. La démonstration de cette exigence est intégrée au plan de tests de recette. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-75. Le système doit permettre la sauvegarde régulière des données selon une politique définie conjointement avec la Direction des Systèmes d'Information. Cette exigence s'inscrit dans la politique de sécurité du Groupe EB. La conformité à cette exigence est un préalable à la levée des réserves de réception. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-76. L'application livrée doit reposer sur une authentification unique adossée à l'annuaire LDAP du Groupe EB. Cette exigence vise à réduire le risque opérationnel identifié sur le périmètre actuel. La conformité à cette exigence est un préalable à la levée des réserves de réception. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+EF-77. Le système doit fournir une documentation d'exploitation permettant aux équipes internes d'assurer le support de premier niveau. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. La démonstration de cette exigence est intégrée au plan de tests de recette. Le prestataire décrit dans son offre la manière dont il compte répondre à cette exigence, avec le niveau de détail attendu pour une consultation de ce type.
+EF-78. Le système doit permettre la segmentation logique du trafic par direction métier, avec des règles de filtrage indépendantes. Cette exigence répond à un besoin exprimé par les utilisateurs métier lors des ateliers de cadrage. Cette exigence est vérifiée lors de la recette technique, sur la base d'un scénario de test documenté. Le Groupe EB se réserve le droit de demander une démonstration anticipée de cette fonctionnalité avant la commande ferme.
+EF-79. Le système doit permettre la génération d'un rapport mensuel de disponibilité par lien. Cette exigence a été formulée à la suite des incidents constatés sur le système actuel. La conformité à cette exigence est un préalable à la levée des réserves de réception. Une réponse partielle à cette exigence doit être explicitement signalée et justifiée dans l'offre du prestataire.
+EF-80. Le système doit permettre l'ajout d'un nouveau site raccordé sans interruption de service sur les sites existants. Cette exigence découle des limites constatées sur la solution actuelle, décrites au chapitre Analyse de l'existant. Cette exigence est validée par un test fonctionnel réalisé en présence d'un représentant du Groupe EB. L'absence de cette fonctionnalité expose le Groupe EB à un risque opérationnel jugé significatif par la Direction des Systèmes d'Information.
+
+6. Spécifications techniques
+
+Les exigences techniques chiffrées applicables à la prestation sont précisées dans le tableau ci-dessous. Toute déviation par rapport à ces valeurs doit être justifiée explicitement dans l'offre du prestataire, avec une solution de compensation équivalente proposée par le prestataire.
+
+| Exigence | Valeur cible | Nature | Commentaire |
+|---|---|---|---|
+| Redondance des liens | Double opérateur | Contractuelle | Valeur vérifiée lors des tests de recette avant mise en production. |
+| Supervision | SNMP centralisée | Fonctionnelle | Contrôlée par sondage pendant la période de garantie. |
+| Latence maximale inter-sites | 2 ms | Contractuelle | Applicable dès la réception provisoire de la prestation. |
+| Câblage structuré | Conforme ISO/IEC 11801 | Réglementaire | Vérifiable par un test documenté fourni avec l'offre. |
+| Bascule automatique | < 15 secondes | Contractuelle | Valeur vérifiée lors des tests de recette avant mise en production. |
+| Segmentation | VLAN par direction métier | Fonctionnelle | Valeur vérifiée lors des tests de recette avant mise en production. |
+| Protocole de routage | Dynamique, convergence < 30 s | Technique | Vérifiable par un test documenté fourni avec l'offre. |
+| Chiffrement des flux | Conforme aux recommandations DSI | Sécurité | Applicable dès la réception provisoire de la prestation. |
+| Journalisation des accès | 12 mois de rétention | Sécurité | Toute dérogation doit être validée par écrit par la Direction des Systèmes d'Information. |
+| Débit garanti par lien | 10 Gbit/s | Contractuelle | Contrôlée par sondage pendant la période de garantie. |
+
+Le prestataire précise dans son offre, pour chaque exigence, la méthode retenue pour en démontrer le respect lors de la recette.
+
+7. Contraintes et normes applicables
+
+Le prestataire s'engage à respecter, pour l'ensemble de la prestation, les normes et réglementations suivantes :
+
+- RFC applicables au routage dynamique. Le prestataire produit les preuves de conformité correspondantes sur demande du Groupe EB.
+- ISO/IEC 11801 (câblage structuré). Le prestataire s'engage à informer le Groupe EB de toute évolution réglementaire impactant cette exigence.
+- Réglementation marocaine relative à la protection des données à caractère personnel. Toute non-conformité constatée est corrigée aux frais du prestataire avant la réception.
+- Règles internes d'achat et de qualification des prestataires. Le prestataire s'engage à informer le Groupe EB de toute évolution réglementaire impactant cette exigence.
+- Politique de sécurité des systèmes d'information du Groupe EB. Le respect de cette norme est vérifié lors de l'audit de recette.
+- Charte informatique interne du Groupe EB. Toute non-conformité constatée est corrigée aux frais du prestataire avant la réception.
+- Règlement Général sur la Protection des Données (RGPD). Le respect de cette norme est vérifié lors de l'audit de recette.
+- ISO/IEC 27001. Le prestataire produit les preuves de conformité correspondantes sur demande du Groupe EB.
+
+8. Niveaux de service attendus
+
+Le taux de disponibilité mensuel minimal exigé est de 99,8 %, mesuré sur les heures ouvrées du Groupe EB. La Garantie de Temps d'Intervention (GTI) et la Garantie de Temps de Rétablissement (GTR) sont fixées ci-dessous, en heures ouvrées à compter de l'ouverture du ticket d'incident.
+
+En cas de dépassement de la GTR, le prestataire en informe sans délai le Groupe EB et propose un plan d'action correctif dans les 24 heures suivant le dépassement constaté.
+
+| Indicateur | Cible | Modalité de mesure |
+|---|---|---|
+| Taux de disponibilité mensuel | 99,8 % | Relevé mensuel de supervision |
+| Garantie de Temps d'Intervention (GTI) | 8 heures ouvrées | Depuis l'ouverture du ticket |
+| Garantie de Temps de Rétablissement (GTR) | 72 heures ouvrées | Depuis l'ouverture du ticket |
+| Criticité bloquante | Priorité 1, traitement immédiat | Astreinte |
+| Criticité majeure | Priorité 2, GTR x 2 | Heures ouvrées |
+| Criticité mineure | Priorité 3, GTR x 4 | Heures ouvrées |
+| Fenêtre de mesure | Mensuelle glissante | Extraction de supervision |
+| Maintenance planifiée | Exclue du calcul de disponibilité | Notifiée 5 jours ouvrés à l'avance |
+
+La disponibilité est calculée mensuellement selon la formule usuelle du temps de fonctionnement rapporté au temps total de la période, hors fenêtres de maintenance planifiée notifiées au préalable au Groupe EB. Un relevé détaillé est transmis chaque début de mois, accompagné de la liste des incidents survenus et de leur temps de résolution respectif.
+
+Toute contestation d'un relevé doit être formulée par écrit dans un délai de dix jours ouvrés suivant sa réception, faute de quoi le relevé est réputé accepté par le Groupe EB.
+
+9. Livrables attendus
+
+| Livrable | Format | Échéance | Observation |
+|---|---|---|---|
+| Dossier d'architecture technique | PDF | Avant le démarrage des travaux | Mis à jour à chaque évolution significative constatée en cours de prestation. |
+| Schéma d'implantation des équipements | PDF / Visio | Avant le démarrage des travaux | Mis à jour à chaque évolution significative constatée en cours de prestation. |
+| Rapport de tests de conformité | PDF | Avant la recette | Rédigé en français, conforme au gabarit documentaire du Groupe EB. |
+| Documentation d'exploitation | PDF | À la réception provisoire | Rédigé en français, conforme au gabarit documentaire du Groupe EB. |
+| Support de formation des équipes techniques | PDF / PPTX | À la réception provisoire | Mis à jour à chaque évolution significative constatée en cours de prestation. |
+| Plan de recollement final | PDF / DWG | À la réception définitive | Mis à jour à chaque évolution significative constatée en cours de prestation. |
+| Registre des adresses IP attribuées | Tableur | À la réception provisoire | Versionné et archivé par le prestataire pendant toute la durée du marché. |
+
+Chaque livrable fait l'objet d'une vérification de conformité par le Groupe EB avant acceptation. Un livrable rejeté est repris par le prestataire sans incidence sur le délai contractuel global, sauf si le rejet résulte d'une modification du périmètre demandée par le Groupe EB.
+
+10. Planning et jalons
+
+Le projet est découpé en phases successives, chacune donnant lieu à un jalon de validation formalisé par un compte-rendu contradictoire entre le prestataire et le Groupe EB. Le passage à la phase suivante est conditionné à la levée des réserves éventuelles de la phase précédente.
+
+Phase 1 — Cadrage et validation de l'architecture cible : 2 semaines. Cette phase se conclut par un jalon formel dont la validation conditionne le démarrage de la phase suivante.
+  - Mise à jour du registre des risques.
+  - Recueil des réserves éventuelles et plan de levée associé.
+  - Vérification des prérequis de la phase suivante.
+  - Rédaction et diffusion du compte-rendu de phase.
+
+Phase 2 — Approvisionnement et préparation : 4 semaines. Cette phase se conclut par un jalon formel dont la validation conditionne le démarrage de la phase suivante.
+  - Recueil des réserves éventuelles et plan de levée associé.
+  - Validation du jalon par le comité de pilotage.
+  - Point d'avancement hebdomadaire avec le chef de projet Groupe EB.
+  - Rédaction et diffusion du compte-rendu de phase.
+
+Phase 3 — Réalisation / déploiement : 2 semaines. Cette phase se conclut par un jalon formel dont la validation conditionne le démarrage de la phase suivante.
+  - Point d'avancement hebdomadaire avec le chef de projet Groupe EB.
+  - Mise à jour du planning détaillé partagé avec le Groupe EB.
+  - Recueil des réserves éventuelles et plan de levée associé.
+  - Vérification des prérequis de la phase suivante.
+
+Phase 4 — Tests et recette : 1 semaine. Cette phase se conclut par un jalon formel dont la validation conditionne le démarrage de la phase suivante.
+  - Mise à jour du planning détaillé partagé avec le Groupe EB.
+  - Recueil des réserves éventuelles et plan de levée associé.
+  - Validation du jalon par le comité de pilotage.
+  - Rédaction et diffusion du compte-rendu de phase.
+
+Phase 5 — Formation des équipes internes : 1 semaine. Cette phase se conclut par un jalon formel dont la validation conditionne le démarrage de la phase suivante.
+  - Rédaction et diffusion du compte-rendu de phase.
+  - Recueil des réserves éventuelles et plan de levée associé.
+  - Mise à jour du planning détaillé partagé avec le Groupe EB.
+  - Mise à jour du registre des risques.
+
+Phase 6 — Bascule en production : 1 semaine. Cette phase se conclut par un jalon formel dont la validation conditionne le démarrage de la phase suivante.
+  - Rédaction et diffusion du compte-rendu de phase.
+  - Point d'avancement hebdomadaire avec le chef de projet Groupe EB.
+  - Mise à jour du planning détaillé partagé avec le Groupe EB.
+  - Mise à jour du registre des risques.
+
+Phase 7 — Période d'observation avant réception définitive : 1 semaine. Cette phase se conclut par un jalon formel dont la validation conditionne le démarrage de la phase suivante.
+  - Vérification des prérequis de la phase suivante.
+  - Mise à jour du registre des risques.
+  - Point d'avancement hebdomadaire avec le chef de projet Groupe EB.
+  - Rédaction et diffusion du compte-rendu de phase.
+
+11. Délais, pénalités et garanties
+
+Le respect du calendrier contractuel constitue une obligation essentielle du prestataire. Tout risque de dérive doit être signalé sans délai au Groupe EB, accompagné d'un plan de récupération proposé par le prestataire.
+
+Le délai global d'exécution est fixé à 90 jours calendaires à compter de la notification de l'ordre de service. Ce délai est ferme et non révisable, sauf cas de force majeure dûment notifié par écrit dans les cinq jours ouvrés suivant sa survenance.
+
+En cas de retard imputable au prestataire, une pénalité de 0,5 % du montant total du marché est appliquée par jour calendaire de retard. Le montant cumulé des pénalités est plafonné à 10 % du montant du marché. Au-delà de ce plafond, le Groupe EB se réserve le droit de résilier le marché aux torts exclusifs du prestataire, sans préjudice des dommages et intérêts.
+
+La prestation est garantie 24 mois à compter de la date de réception définitive. Pendant cette période, le prestataire assure sans frais supplémentaires la correction de toute anomalie ainsi que le remplacement des éléments défectueux.
+
+À l'expiration de la garantie, un contrat de maintenance pourra être conclu par avenant, aux conditions tarifaires proposées dans l'offre initiale. Le prestataire communique, avant l'échéance de la garantie, un état des lieux détaillé du périmètre couvert, permettant au Groupe EB d'apprécier l'opportunité de reconduire la relation contractuelle.
+
+12. Conditions financières
+
+Le montant prévisionnel de la prestation est estimé à 180 000 dirhams hors taxes. Le règlement intervient dans un délai de 45 jours à compter de la réception de la facture, sous réserve de la levée de toute réserve formulée lors de la réception.
+
+Une retenue de garantie de 10 % est appliquée sur chaque situation et libérée à la réception définitive. Le prestataire fournit une décomposition détaillée du prix global forfaitaire, distinguant la part matérielle, la part logicielle et la part prestation de services.
+
+Les factures sont établies selon les jalons décrits au chapitre Planning et jalons, et accompagnées des pièces justificatives requises par la Direction Financière du Groupe EB. Toute facture incomplète est retournée au prestataire et suspend le délai de règlement jusqu'à régularisation.
+
+Les prix proposés sont réputés fermes pour toute la durée du marché, hors avenant expressément approuvé par les deux parties.
+
+13. Critères d'évaluation des offres
+
+Les offres sont évaluées selon les critères pondérés ci-dessous, sur la base d'une notation à 100 points. Toute offre incomplète au regard des exigences obligatoires du présent cahier des charges est déclarée irrecevable et n'est pas notée.
+
+| Critère | Pondération |
+|---|---|
+| Prix | 35 % |
+| Valeur technique — méthodologie proposée | 20 % |
+| Valeur technique — moyens humains dédiés | 20 % |
+| Délai d'exécution proposé | 15 % |
+| Références et expérience du prestataire | 10 % |
+
+La notation prix est calculée au prorata de l'offre la mieux-disante. La notation technique est établie par une commission d'évaluation interne, sur la base d'une grille de critères communiquée aux candidats sur demande. Un écart significatif entre deux offres sur un même critère est motivé par écrit dans le rapport d'analyse des offres.
+
+14. Annexes
+
+Le prestataire joint à son offre les pièces suivantes, sans lesquelles l'offre peut être déclarée irrecevable :
+
+- Attestation de régularité fiscale et sociale.
+- Copie des certifications qualité en cours de validité.
+- Fiches techniques des équipements et logiciels proposés.
+- Organigramme de l'équipe projet proposée.
+- Modèle de rapport d'intervention ou de recette proposé.
+- Modèle de plan d'assurance qualité.
+- Planning prévisionnel détaillé de la prestation.
+- Attestation d'assurance responsabilité civile professionnelle.

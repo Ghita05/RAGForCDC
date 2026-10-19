@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assistant CDC — RAG</title>
+<style>
+  :root{--navy:#1a3a5c;--grey:#5a6672;--line:#dce3ea}
+  *{box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1c2530;background:#f5f7fa}
+  header{background:var(--navy);color:#fff;padding:18px 28px}
+  header h1{margin:0;font-size:18px}header p{margin:4px 0 0;opacity:.8;font-size:13px}
+  main{max-width:860px;margin:24px auto;padding:0 20px;display:grid;gap:20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px}
+  .card h2{margin:0 0 12px;font-size:14px;color:var(--navy);text-transform:uppercase;letter-spacing:.04em}
+  input,button,select{font:inherit}
+  input[type=text]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px}
+  .row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}
+  button{background:var(--navy);color:#fff;border:0;border-radius:8px;padding:11px 18px;cursor:pointer}
+  button:disabled{opacity:.5;cursor:wait}
+  .answer{white-space:pre-wrap;line-height:1.5;margin-top:12px}
+  .src{border-left:3px solid var(--navy);background:#f0f4f8;padding:8px 12px;margin:8px 0;border-radius:4px;font-size:13px}
+  .src b{color:var(--navy)}.pill{font-size:12px;color:var(--grey)}
+  .muted{color:var(--grey);font-size:13px}
+</style>
+</head>
+<body>
+<header><h1>Assistant CDC — plateforme RAG</h1><p>Groupe EB · démonstration interne</p></header>
+<main>
+  <section class="card">
+    <h2>1 · Ingérer un cahier des charges</h2>
+    <div class="row">
+      <input type="file" id="file" accept=".pdf,.docx,.txt">
+      <input type="text" id="ftype" placeholder="type (reseau, logiciel…) — optionnel" style="max-width:280px">
+    </div>
+    <p><button id="up">Ingérer le document</button> <span id="upmsg" class="muted"></span></p>
+  </section>
+
+  <section class="card">
+    <h2>2 · Poser une question</h2>
+    <input type="text" id="q" placeholder="Ex : Quels sont les délais et pénalités du projet réseau ?">
+    <div class="row" style="margin-top:10px">
+      <input type="text" id="qtype" placeholder="filtrer par type — optionnel" style="max-width:280px">
+      <button id="ask" style="flex:0 0 auto">Interroger</button>
+    </div>
+    <div id="out"></div>
+  </section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+$("up").onclick=async()=>{
+  const f=$("file").files[0]; if(!f){$("upmsg").textContent="choisir un fichier d'abord";return;}
+  $("up").disabled=true;$("upmsg").textContent="ingestion…";
+  const fd=new FormData(); fd.append("file",f); if($("ftype").value)fd.append("cdcType",$("ftype").value);
+  try{const r=await fetch("/api/ingest/file",{method:"POST",body:fd});const j=await r.json();
+    $("upmsg").textContent=`✓ ${j.filename} — ${j.chunkCount} chunks`;}
+  catch(e){$("upmsg").textContent="erreur : "+e;}
+  $("up").disabled=false;
+};
+$("ask").onclick=async()=>{
+  const q=$("q").value.trim(); if(!q)return;
+  $("ask").disabled=true;$("out").innerHTML='<p class="muted">recherche + génération (qwen tourne en local, ~30–90 s)…</p>';
+  const body=new URLSearchParams({question:q}); if($("qtype").value)body.append("cdcType",$("qtype").value);
+  try{
+    const r=await fetch("/api/qa",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
+    const j=await r.json();
+    let html='<div class="answer">'+ (j.answer||"") +'</div>';
+    if(j.sources&&j.sources.length){html+='<h2 style="margin-top:16px">Sources</h2>';
+      j.sources.forEach((s,i)=>{html+=`<div class="src"><b>[Source ${i+1}] ${s.filename}</b> <span class="pill">${s.cdcType||""} · similarité ${(s.similarity).toFixed(3)}</span><br>${s.content.slice(0,180)}…</div>`;});}
+    $("out").innerHTML=html;
+  }catch(e){$("out").innerHTML='<p class="muted">erreur : '+e+'</p>';}
+  $("ask").disabled=false;
+};
+</script>
+</body>
+</html>
