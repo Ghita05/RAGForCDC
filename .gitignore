@@ -7,3 +7,4 @@ __pycache__/
 !.env.example
 !.env.local.example
 uploads/
+CLAUDE.md
